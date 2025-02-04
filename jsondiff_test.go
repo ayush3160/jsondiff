@@ -104,3 +104,14 @@ func TestCompareJSON_NestedStructureMismatch(t *testing.T) {
     }
 }
 
+// Test generated using Keploy
+func TestNormalizeJSON_InvalidInput(t *testing.T) {
+    invalidJSON := []byte(`{invalid-json}`)
+
+    _, err := normalizeJSON(invalidJSON)
+    if err == nil {
+        t.Errorf("Expected an error for invalid JSON input, but got nil")
+    }
+}
+
+
